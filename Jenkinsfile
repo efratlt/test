@@ -5,7 +5,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Run pytest to execute tests
-                sh 'python -m unittest TestAddFunction.py'
+                sh 'python -m unittest test/TestAddFunction.py'
             }
         }
     }

@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from the GitHub repository
-                git 'https://github.com/efratlt/test.git'
+                git url 'https://github.com/efratlt/test.git'
             }
         }
         stage('Test') {

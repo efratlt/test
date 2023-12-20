@@ -10,10 +10,8 @@ pipeline {
                     }
                     steps {
                         script {
-                            def osVersion = sh(script: 'cat /etc/os-release | grep PRETTY_NAME', returnStdout: true).trim()
-                            echo "Linux OS version: ${osVersion}"
+                            sh 'echo "winnnn"'
                         }
-                        sh "echo uname -r"
                     }
                 }
 
@@ -22,7 +20,14 @@ pipeline {
                         label 'unix'
                     }
                     steps {
-                        bat 'ver'
+                        script {
+                            sh 'echo uname -r'
+                            sh 'echo "$$$$$$$$$$$"'
+                            def osVersion = sh(script: 'cat /etc/os-release | grep PRETTY_NAME', returnStdout: true).trim()
+                            sh 'echo "Linux OS version: ${osVersion}"'
+
+                        }
+
                     }
                 }
             }

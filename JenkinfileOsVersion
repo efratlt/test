@@ -22,15 +22,7 @@ pipeline {
                         label 'unix'
                     }
                     steps {
-                        script {
-                            def osName = System.getProperty('os.name')
-                            def osVersion = System.getProperty('os.version')
-                            def osArch = System.getProperty('os.arch')
-
-                            echo "Operating System: ${osName}"
-                            echo "Version: ${osVersion}"
-                            echo "Architecture: ${osArch}"
-                        }
+                        bat 'ver'
                     }
                 }
             }

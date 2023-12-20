@@ -10,14 +10,10 @@ pipeline {
                     }
                     steps {
                         script {
-                            def osName = System.getProperty('os.name')
-                            def osVersion = System.getProperty('os.version')
-                            def osArch = System.getProperty('os.arch')
-
-                            echo "Operating System: ${osName}"
-                            echo "Version: ${osVersion}"
-                            echo "Architecture: ${osArch}"
+                            def osVersion = sh(script: 'cat /etc/os-release | grep PRETTY_NAME', returnStdout: true).trim()
+                            echo "Linux OS version: ${osVersion}"
                         }
+                        sh "echo uname -r"
                     }
                 }
 
